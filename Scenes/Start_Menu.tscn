@@ -1,37 +1,21 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="Curve" id=1]
-min_value = 0.99
-max_value = 46.62
-_data = [ Vector2( 0, 0.99 ), 0.0, -12.4085, 0, 0, Vector2( 1, 17.9975 ), 4.84894, 0.0, 0, 0 ]
+[ext_resource path="res://Scenes/Scripts/Start_Menu.gd" type="Script" id=2]
 
 [node name="Start_Menu" type="Node"]
+script = ExtResource( 2 )
 
-[node name="Control" type="Control" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Background Color" type="ColorRect" parent="Camera2D"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Background Color" type="ColorRect" parent="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_left = -500.0
+margin_top = -300.0
+margin_right = 500.0
+margin_bottom = 300.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Control"]
-position = Vector2( 528, 294.909 )
-amount = 200
-lifetime = 3.0
-speed_scale = 3.0
-spread = 180.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 100.0
-initial_velocity_random = 0.35
-linear_accel = 80.0
-tangential_accel = 12.9
-scale_amount_random = 0.42
-scale_amount_curve = SubResource( 1 )

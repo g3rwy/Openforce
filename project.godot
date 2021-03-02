@@ -11,7 +11,16 @@ config_version=4
 [application]
 
 config/name="Openforce"
+run/main_scene="res://Scenes/Start_Menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://Autoloads/Globals.gd"
+
+[display]
+
+window/size/width=1000
 
 [physics]
 
