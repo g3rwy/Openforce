@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Scripts/Start_Menu.gd" type="Script" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float offset = 1f;
+
+void fragment(){
+	vec4 green_channel = texture(SCREEN_TEXTURE, SCREEN_UV);
+	vec4 red_channel = texture(SCREEN_TEXTURE, vec2(SCREEN_UV.x + (offset * SCREEN_PIXEL_SIZE.x), SCREEN_UV.y));
+	vec4 blue_channel = texture(SCREEN_TEXTURE, vec2(SCREEN_UV.x - (offset * SCREEN_PIXEL_SIZE.x), SCREEN_UV.y));
+	COLOR = vec4(red_channel.r, green_channel.g, blue_channel.b, 1f);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/offset = 2.0
 
 [node name="Start_Menu" type="Node"]
 script = ExtResource( 2 )
@@ -8,14 +24,41 @@ script = ExtResource( 2 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Background Color" type="ColorRect" parent="Camera2D"]
+[node name="Background" type="Control" parent="."]
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background Color" type="ColorRect" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -500.0
-margin_top = -300.0
-margin_right = 500.0
-margin_bottom = 300.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars" type="Node2D" parent="Background"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="Screen" type="Control" parent="CanvasLayer"]
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars_Shader" type="ColorRect" parent="CanvasLayer/Screen"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

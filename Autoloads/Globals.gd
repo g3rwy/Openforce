@@ -1,3 +1,3 @@
 extends Node
 
-var star_speed = 20 # speed of our stars moving towards us in main menu
+var star_speed = 40 # speed of our stars moving towards us in main menu
