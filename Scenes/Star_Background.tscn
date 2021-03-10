@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Shaders/Chromatic.tres" type="Material" id=1]
+[ext_resource path="res://Scenes/Scripts/Star_Background.gd" type="Script" id=2]
+
+[sub_resource type="Shader" id=1]
+resource_local_to_scene = true
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[node name="Root" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background Color" type="ColorRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars" type="Node2D" parent="Background"]
+material = SubResource( 2 )
+
+[node name="Shader" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Screen" type="Control" parent="Shader"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars_Shader" type="ColorRect" parent="Shader/Screen"]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="test_camera" type="Camera2D" parent="."]
+visible = false

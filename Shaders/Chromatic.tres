@@ -14,4 +14,4 @@ void fragment(){
 
 [resource]
 shader = SubResource( 1 )
-shader_param/offset = 2.0
+shader_param/offset = 5.0

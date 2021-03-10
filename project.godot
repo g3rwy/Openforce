@@ -20,7 +20,7 @@ Globals="*res://Autoloads/Globals.gd"
 
 [display]
 
-window/size/width=1000
+window/size/width=1020
 
 [importer_defaults]
 

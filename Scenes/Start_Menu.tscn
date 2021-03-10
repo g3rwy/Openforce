@@ -1,14 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Visuals/title.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Scripts/Start_Menu.gd" type="Script" id=2]
-[ext_resource path="res://Shaders/Chromatic.tres" type="Material" id=3]
-
-[sub_resource type="Shader" id=1]
-resource_local_to_scene = true
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+[ext_resource path="res://Scenes/Star_Background.tscn" type="PackedScene" id=4]
 
 [node name="Start_Menu" type="Node"]
 script = ExtResource( 2 )
@@ -22,48 +16,24 @@ anchor_top = -0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="Background" type="Control" parent="Screen"]
+[node name="Background" parent="Screen" instance=ExtResource( 4 )]
+
+[node name="Rough_Fix" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Menu" type="Control" parent="Rough_Fix"]
 anchor_left = -0.5
 anchor_top = -0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 500.0
-margin_top = 300.0
-margin_right = 500.0
-margin_bottom = 300.0
-mouse_filter = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Background Color" type="ColorRect" parent="Screen/Background"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Stars" type="Node2D" parent="Screen/Background"]
-material = SubResource( 2 )
-
-[node name="Menu" type="Control" parent="Screen"]
-anchor_left = -0.5
-anchor_top = -0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 500.0
-margin_top = 300.0
-margin_right = 500.0
-margin_bottom = 300.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Buttons" type="VBoxContainer" parent="Screen/Menu"]
+[node name="Buttons" type="VBoxContainer" parent="Rough_Fix/Menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
@@ -71,9 +41,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="TextureRect" parent="Screen/Menu/Buttons"]
+[node name="Title" type="TextureRect" parent="Rough_Fix/Menu/Buttons"]
 margin_top = 67.0
-margin_right = 1000.0
+margin_right = 1020.0
 margin_bottom = 337.0
 rect_min_size = Vector2( 0, 270 )
 size_flags_horizontal = 5
@@ -84,107 +54,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play" type="Button" parent="Screen/Menu/Buttons"]
-margin_left = 478.0
+[node name="Play" type="Button" parent="Rough_Fix/Menu/Buttons"]
+margin_left = 488.0
 margin_top = 341.0
-margin_right = 521.0
+margin_right = 531.0
 margin_bottom = 361.0
 size_flags_horizontal = 4
 shortcut_in_tooltip = false
 text = "PLAY"
 
-[node name="HSeparator" type="HSeparator" parent="Screen/Menu/Buttons"]
+[node name="HSeparator" type="HSeparator" parent="Rough_Fix/Menu/Buttons"]
 modulate = Color( 0, 0, 0, 0 )
 margin_top = 365.0
-margin_right = 1000.0
+margin_right = 1020.0
 margin_bottom = 380.0
 rect_min_size = Vector2( 0, 15 )
 
-[node name="Button2" type="Button" parent="Screen/Menu/Buttons"]
-margin_left = 449.0
+[node name="Button2" type="Button" parent="Rough_Fix/Menu/Buttons"]
+margin_left = 459.0
 margin_top = 384.0
-margin_right = 550.0
+margin_right = 560.0
 margin_bottom = 404.0
 size_flags_horizontal = 4
 text = "Some buttons"
 
-[node name="HSeparator2" type="HSeparator" parent="Screen/Menu/Buttons"]
+[node name="HSeparator2" type="HSeparator" parent="Rough_Fix/Menu/Buttons"]
 modulate = Color( 0, 0, 0, 0 )
 margin_top = 408.0
-margin_right = 1000.0
+margin_right = 1020.0
 margin_bottom = 423.0
 rect_min_size = Vector2( 0, 15 )
 
-[node name="Button3" type="Button" parent="Screen/Menu/Buttons"]
-margin_left = 449.0
+[node name="Button3" type="Button" parent="Rough_Fix/Menu/Buttons"]
+margin_left = 459.0
 margin_top = 427.0
-margin_right = 550.0
+margin_right = 560.0
 margin_bottom = 447.0
 size_flags_horizontal = 4
 text = "Some buttons"
 
-[node name="HSeparator3" type="HSeparator" parent="Screen/Menu/Buttons"]
+[node name="HSeparator3" type="HSeparator" parent="Rough_Fix/Menu/Buttons"]
 modulate = Color( 0, 0, 0, 0 )
 margin_top = 451.0
-margin_right = 1000.0
+margin_right = 1020.0
 margin_bottom = 466.0
 rect_min_size = Vector2( 0, 15 )
 
-[node name="Button4" type="Button" parent="Screen/Menu/Buttons"]
-margin_left = 449.0
+[node name="Button4" type="Button" parent="Rough_Fix/Menu/Buttons"]
+margin_left = 459.0
 margin_top = 470.0
-margin_right = 550.0
+margin_right = 560.0
 margin_bottom = 490.0
 size_flags_horizontal = 4
 text = "Some buttons"
 
-[node name="HSeparator4" type="HSeparator" parent="Screen/Menu/Buttons"]
+[node name="HSeparator4" type="HSeparator" parent="Rough_Fix/Menu/Buttons"]
 modulate = Color( 0, 0, 0, 0 )
 margin_top = 494.0
-margin_right = 1000.0
+margin_right = 1020.0
 margin_bottom = 509.0
 rect_min_size = Vector2( 0, 15 )
 
-[node name="Quit" type="Button" parent="Screen/Menu/Buttons"]
-margin_left = 477.0
+[node name="Quit" type="Button" parent="Rough_Fix/Menu/Buttons"]
+margin_left = 487.0
 margin_top = 513.0
-margin_right = 522.0
+margin_right = 532.0
 margin_bottom = 533.0
 size_flags_horizontal = 4
 text = "QUIT"
 
-[node name="test" type="Label" parent="Screen/Menu"]
-visible = false
-margin_left = 423.559
-margin_top = 309.717
-margin_right = 575.559
-margin_bottom = 323.717
-text = "WHY IT DOESN\"T WORK"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Shader" type="CanvasLayer" parent="Screen"]
-follow_viewport_enable = true
-
-[node name="Screen" type="Control" parent="Screen/Shader"]
-anchor_left = -0.5
-anchor_top = -0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-mouse_filter = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Stars_Shader" type="ColorRect" parent="Screen/Shader/Screen"]
-material = ExtResource( 3 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="pressed" from="Screen/Menu/Buttons/Play" to="." method="_on_play"]
-[connection signal="pressed" from="Screen/Menu/Buttons/Quit" to="." method="_on_quit"]
+[connection signal="pressed" from="Rough_Fix/Menu/Buttons/Play" to="." method="_on_play"]
+[connection signal="pressed" from="Rough_Fix/Menu/Buttons/Quit" to="." method="_on_quit"]
