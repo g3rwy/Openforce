@@ -8,3 +8,8 @@ Remember to check **Broforce** first! It's really cool game
 
 ## TODO
 - Make better title sprite, this one is only placeholder
+
+# Credits
+
+- Thank you GDQuest for blur shader<3 [link](https://github.com/GDQuest/godot-shaders/blob/master/godot/Shaders/gaussian_blur.shader)
+- Thank you Daniel Shiffman for the "moving stars" algorithm<3
