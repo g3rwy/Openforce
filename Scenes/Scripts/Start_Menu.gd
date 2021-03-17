@@ -12,4 +12,4 @@ func _on_quit():
 
 
 func _on_play():
-	pass
+	get_tree().change_scene("res://Test.tscn")
