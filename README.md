@@ -12,4 +12,4 @@ Remember to check **Broforce** first! It's really cool game
 # Credits
 
 - Thank you GDQuest for blur shader<3 [link](https://github.com/GDQuest/godot-shaders/blob/master/godot/Shaders/gaussian_blur.shader)
-- Thank you Daniel Shiffman for the "moving stars" algorithm<3
+- Thank you Daniel Shiffman for the "starfield" algorithm<3 [link](https://www.youtube.com/watch?v=17WoOqgXsRM)
