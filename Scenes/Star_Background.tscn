@@ -42,7 +42,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = SubResource( 3 )
-shader_param/blur_scale = Vector2( 0.3, 0.2 )
+shader_param/blur_scale = Vector2( 0.4, 0.3 )
 
 [node name="Root" type="Control"]
 anchor_right = 1.0
